@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIROR-math | Belajar Matematika Asyik</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-calculator"></i>
+            <span>MIROR-math</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="#cacah">Bilangan Cacah</a></li>
+                <li><a href="#fpbkpk">FPB & KPK</a></li>
+                <li><a href="#pecahan">Pecahan</a></li>
+                <li><a href="#rumus">Luas & Keliling</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di <span>MIROR-math</span></h1>
+            <p>Platform belajar matematika interaktif untuk Bilangan Cacah, FPB & KPK, Bilangan Pecahan, serta Rumus Luas & Keliling Bangun Datar.</p>
+            <a href="#cacah" class="btn-primary">Mulai Belajar <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Modul 1: Bilangan Cacah -->
+        <section id="cacah" class="card">
+            <h2><i class="fa-solid fa-1"></i> Bilangan Cacah</h2>
+            <p>Bilangan cacah adalah himpunan bilangan bulat yang tidak negatif, yaitu dimulai dari angka 0, 1, 2, 3, 4, dan seterusnya.</p>
+            <div class="interactive-box">
+                <h3>Kalkulator Operasi Bilangan Cacah</h3>
+                <div class="input-group">
+                    <input type="number" id="cacah1" placeholder="Angka 1">
+                    <select id="cacahOp">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">×</option>
+                        <option value="/">÷</option>
+                    </select>
+                    <input type="number" id="cacah2" placeholder="Angka 2">
+                    <button onclick="hitungCacah()">Hitung</button>
+                </div>
+                <div class="result" id="hasilCacah">Hasil: -</div>
+            </div>
+        </section>
+
+        <!-- Modul 2: FPB dan KPK -->
+        <section id="fpbkpk" class="card">
+            <h2><i class="fa-solid fa-2"></i> FPB & KPK</h2>
+            <p><strong>KPK</strong> (Kelipatan Persekutuan Terkecil) adalah kelipatan terkecil yang sama dari dua atau lebih bilangan. <br><strong>FPB</strong> (Faktor Persekutuan Terbesar) adalah faktor terbesar yang sama dari dua atau lebih bilangan.</p>
+            <div class="interactive-box">
+                <h3>Kalkulator FPB & KPK</h3>
+                <div class="input-group">
+                    <input type="number" id="valA" placeholder="Bilangan A">
+                    <input type="number" id="valB" placeholder="Bilangan B">
+                    <button onclick="hitungFPBKPK()">Cari FPB & KPK</button>
+                </div>
+                <div class="result" id="hasilFpbKpk">Hasil: -</div>
+            </div>
+        </section>
+
+        <!-- Modul 3: Bilangan Pecahan -->
+        <section id="pecahan" class="card">
+            <h2><i class="fa-solid fa-3"></i> Bilangan Pecahan</h2>
+            <p>Bilangan pecahan terdiri dari pembilang dan penyebut (contoh: $\frac{a}{b}$). Pelajari dan hitung penjumlahan serta pengurangan pecahan dengan penyebut sama atau berbeda.</p>
+            <div class="interactive-box">
+                <h3>Penjumlahan Pecahan ($\frac{a}{b} + \frac{c}{d}$)</h3>
+                <div class="input-group pecahan-inputs">
+                    <div>
+                        <input type="number" id="p1" placeholder="Pem 1">
+                        <hr>
+                        <input type="number" id="p2" placeholder="Pen 1">
+                    </div>
+                    <span>+</span>
+                    <div>
+                        <input type="number" id="p3" placeholder="Pem 2">
+                        <hr>
+                        <input type="number" id="p4" placeholder="Pen 2">
+                    </div>
+                    <button onclick="hitungPecahan()">=</button>
+                </div>
+                <div class="result" id="hasilPecahan">Hasil: -</div>
+            </div>
+        </section>
+
+        <!-- Modul 4: Rumus Luas & Keliling Bangun Datar -->
+        <section id="rumus" class="card">
+            <h2><i class="fa-solid fa-4"></i> Rumus Luas & Keliling Bangun Datar</h2>
+            <div class="shape-selector">
+                <button onclick="pilihBangun('persegi')" class="shape-btn active">Persegi</button>
+                <button onclick="pilihBangun('panjang')" class="shape-btn">Persegi Panjang</button>
+                <button onclick="pilihBangun('segitiga')" class="shape-btn">Segitiga</button>
+                <button onclick="pilihBangun('lingkaran')" class="shape-btn">Lingkaran</button>
+            </div>
+
+            <!-- Kalkulator Bangun Datar Dinamis -->
+            <div class="interactive-box" id="shapeCalculator">
+                <!-- Konten form akan diisi via JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>MIROR-math</strong>. Dibuat khusus untuk Pembelajaran Matematika Interaktif.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
+  
